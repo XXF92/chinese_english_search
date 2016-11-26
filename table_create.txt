@@ -1,0 +1,18 @@
+<!-- 创建数据库 -->
+create database word;
+
+create table words(
+id int primary key auto_increment,
+enword varchar(32) not null,
+cnword varchar(256) not null
+)charset=utf8;
+
+<!-- 如果插入语句错误或者乱码 ：请set names gbk; -->
+insert into words (enword,cnword) values('china','中国');
+insert into words (enword,cnword) values('english','英语');
+insert into words (enword,cnword) values('school','学校');
+insert into words (enword,cnword) values('boy','男孩');
+insert into words (enword,cnword) values('girl','女孩');
+insert into words (enword,cnword) values('humen','人,人类');
+insert into words (enword,cnword) values('chinese','中文,中国人');
+
