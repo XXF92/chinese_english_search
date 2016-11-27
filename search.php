@@ -3,7 +3,7 @@ header("Content-type:text/html;charset=utf-8");
 error_reporting(0);//屏蔽错误信息
 include('Helper.class.php');
 
-
+// 查询操作
 if (!$_POST['enword'] == '') {
     search_enwrod($_POST['enword']);
 }elseif (!$_POST['cnword'] == '') {
@@ -13,6 +13,8 @@ else
 {
     echo "请输入查询的单词 ";
 }
+
+
 
 
 // 查询英文
@@ -25,11 +27,11 @@ function search_enwrod($str)
    
    if(!$arr)
    {
-        echo "查询失败,找不到该单词";
+        echo "查询失败,找不到该单词<a href='index.html'>返回</a>";
         
    }else{
         echo "<h4 ><span style='color:red;'>$str </span>的中文翻译如下:</h4>";
-       echo '<div>'.implode($arr, ',').'</div>';
+        echo '<div>'.implode($arr, ',').'</div>';
       
    }
   
@@ -62,6 +64,8 @@ function search_cnwrod($str)
    }
   
 }
+
+
 
 
 echo "<a href='index.html'>返回查询</a>";
